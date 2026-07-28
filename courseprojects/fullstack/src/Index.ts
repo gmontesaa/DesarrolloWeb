@@ -1,3 +1,4 @@
+// Tutorial 01: proyecto Express MPA/SSR con TypeScript, EJS y Tailwind
 import express from 'express';
 import expressLayouts from 'express-ejs-layouts';
 import path from 'path';

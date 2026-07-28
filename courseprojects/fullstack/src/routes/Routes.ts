@@ -1,3 +1,4 @@
+// Tutorial 01: proyecto Express MPA/SSR con TypeScript, EJS y Tailwind
 import { Router } from 'express';
 import { HomeController } from '../controllers/HomeController.js';
 
