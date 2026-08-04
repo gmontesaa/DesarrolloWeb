@@ -1,0 +1,66 @@
+<script setup lang="ts"></script>
+
+<template>
+  <section class="mt-4 mb-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800 text-center">Contact Page</h2>
+      <p class="text-gray-500 text-center mt-2">¿Tienes alguna pregunta? Escríbenos o visítanos.</p>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Contact info -->
+        <div class="bg-white rounded-lg shadow p-6 space-y-5">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Información de contacto</h3>
+
+          <div class="flex items-center">
+            <i class="fas fa-phone mr-3 text-blue-500 w-5"></i>
+            <span class="text-gray-700">+57 300 123 4567</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-envelope mr-3 text-blue-500 w-5"></i>
+            <span class="text-gray-700">contacto@libraryapp.com</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-map-marker-alt mr-3 text-blue-500 w-5"></i>
+            <span class="text-gray-700">Cra 49 #7 Sur-50, Medellín, Colombia</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-clock mr-3 text-blue-500 w-5"></i>
+            <span class="text-gray-700">Lunes a viernes: 8:00 a.m. - 6:00 p.m.</span>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Envíanos un mensaje</h3>
+
+          <form class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">Nombre</label>
+              <input type="text" name="name" placeholder="Tu nombre"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">Correo electrónico</label>
+              <input type="email" name="email" placeholder="tucorreo@ejemplo.com"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">Asunto</label>
+              <input type="text" name="subject" placeholder="¿En qué podemos ayudarte?"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1">Mensaje</label>
+              <textarea name="message" rows="4" placeholder="Escribe tu mensaje aquí..."
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-200">
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
