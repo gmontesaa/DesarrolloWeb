@@ -22,7 +22,7 @@
 
           <div class="flex justify-center mb-4">
             <img
-              src="https://picsum.photos/seed/picsum/536/354"
+              src="https://picsum.photos/seed/book-<%= book.id %>/536/354"
               alt="Book Cover"
               class="object-cover rounded shadow-sm w-full h-auto"
             />
@@ -36,7 +36,7 @@
           <div class="bg-gray-50 rounded-lg p-3 mb-4">
             <div class="flex justify-between text-sm">
               <span class="text-gray-600">Price:</span>
-              <span class="font-semibold">$<%= book.price.toLocaleString() %></span>
+              <span class="font-semibold">$<%= book.price.toFixed(2) %></span>
             </div>
           </div>
 

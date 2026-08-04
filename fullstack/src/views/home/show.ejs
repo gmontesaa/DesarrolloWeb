@@ -7,7 +7,7 @@
         <div class="bg-white rounded-lg shadow-md p-8 mb-8">
           <div class="flex items-start space-x-8">
             <div>
-              <img src="https://picsum.photos/seed/picsum/536/354"
+              <img src="https://picsum.photos/seed/book-<%= book.id %>/536/354"
                 alt="Book Cover" class="object-cover rounded shadow-sm w-72 h-auto" />
             </div>
             <div>
@@ -34,12 +34,12 @@
               <div class="flex justify-between">
                 <span class="text-gray-600">Category:</span>
                 <span class="font-medium">
-                  <%= book.Category %>
+                  <%= book.category %>
                 </span>
               </div>
               <div class="flex justify-between">
                 <span class="text-gray-600">Price:</span>
-                <span class="font-medium">$<%= book.price.toLocaleString() %></span>
+                <span class="font-medium">$<%= book.price.toFixed(2) %></span>
               </div>
               <div class="flex justify-between">
               <span class="text-gray-600">Stock:</span>

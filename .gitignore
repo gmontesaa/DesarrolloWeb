@@ -2,4 +2,8 @@
 node_modules/
 dist/
 **/src/public/
+**/src/**/*.js
+**/src/**/*.js.map
+**/src/**/*.d.ts
+**/src/**/*.d.ts.map
 *.log
