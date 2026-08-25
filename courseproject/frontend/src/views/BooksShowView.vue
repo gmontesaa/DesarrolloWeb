@@ -1,20 +1,11 @@
 <script setup lang="ts">
 import BookReviews from '@/components/BookReviews.vue';
 import { BookService } from '@/services/BookService.js';
+import { formatToCOP } from '@/utils/currency.js';
 import { useRoute } from 'vue-router';
 const route = useRoute();
 const bookId = Number(route.params.id);
 const book = BookService.getBookById(bookId);
-// functions
-function formatToCOP(price: number): string {
-  const formatter = new Intl.NumberFormat('es-CO', {
-    style: 'currency',
-    currency: 'COP',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
-  return formatter.format(price).replace(/^\s*\$\s?/, '');
-}
 </script>
 <template>
   <section v-if="book">
@@ -25,7 +16,7 @@ function formatToCOP(price: number): string {
             <div class="flex items-start space-x-8">
               <div>
                 <img
-                  src="https://picsum.photos/seed/picsum/536/354"
+                  :src="`https://picsum.photos/seed/book-${book.id}/536/354`"
                   alt="Book Cover"
                   class="object-cover rounded shadow-sm w-72 h-auto"
                 />

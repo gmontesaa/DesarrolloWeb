@@ -1,30 +1,18 @@
 <script setup lang="ts">
 import { BookService } from '@/services/BookService.js';
 import OtherService from '@/services/OtherService.js';
-import { ref, watch } from 'vue';
+import { formatToCOP } from '@/utils/currency.js';
+import { computed, ref } from 'vue';
 const books = BookService.getBooks();
-const filteredBooks = ref(books);
 // selectors
 const selectorCategories = OtherService.getUniqueBookCategories();
 const selectedCategory = ref('');
-// functions
-function formatToCOP(price: number): string {
-  const formatter = new Intl.NumberFormat('es-CO', {
-    style: 'currency',
-    currency: 'COP',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
-  return formatter.format(price).replace(/^\s*\$\s?/, '');
-}
-// watchers
-watch(selectedCategory, (newCategory) => {
-  if (newCategory) {
-    filteredBooks.value = books.filter((book) => book.category === newCategory);
-  } else {
-    filteredBooks.value = books;
-  }
-});
+// computed
+const filteredBooks = computed(() =>
+  selectedCategory.value
+    ? books.filter((book) => book.category === selectedCategory.value)
+    : books,
+);
 </script>
 <template>
   <section>
@@ -65,7 +53,7 @@ watch(selectedCategory, (newCategory) => {
             </div>
             <div class="flex justify-center mb-4">
               <img
-                src="https://picsum.photos/seed/picsum/536/354"
+                :src="`https://picsum.photos/seed/book-${book.id}/536/354`"
                 alt="Book Cover"
                 class="object-cover rounded shadow-sm w-full h-auto"
               />

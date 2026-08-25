@@ -1,5 +1,5 @@
 import type { ReviewInterface } from '@/interfaces/ReviewInterface';
-import { useReviewStore } from '@/stores/reviewstore.js';
+import { useReviewStore } from '@/stores/reviewStore.js';
 export class ReviewService {
   static getReviews(): ReviewInterface[] {
     return useReviewStore().reviews;

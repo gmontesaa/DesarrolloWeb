@@ -1,5 +1,5 @@
 import type { BookInterface } from '@/interfaces/BookInterface';
-import { useBookStore } from '@/stores/bookstore.js';
+import { useBookStore } from '@/stores/bookStore.js';
 import type { CreateBookDTO } from '@/dtos/CreateBookDTO.js';
 export class BookService {
   static getBooks(): BookInterface[] {
@@ -9,7 +9,8 @@ export class BookService {
     return useBookStore().books.find((book) => book.id === id);
   }
   static createBook(book: CreateBookDTO): void {
-    const id = useBookStore().books.length + 1;
-    useBookStore().books.push({ id, ...book });
+    const store = useBookStore();
+    const nextId = store.books.length > 0 ? Math.max(...store.books.map((b) => b.id), 0) + 1 : 1;
+    store.books.push({ id: nextId, ...book });
   }
 }
