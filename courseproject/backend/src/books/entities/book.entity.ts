@@ -7,7 +7,7 @@ export class Book {
   title: string;
   @Column()
   category: string;
-  @Column()
+  @Column({ type: 'real' })
   price: number;
   @Column()
   stock: number;
