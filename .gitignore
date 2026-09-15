@@ -7,3 +7,5 @@ dist/
 **/src/**/*.d.ts
 **/src/**/*.d.ts.map
 *.log
+*.sqlite
+*.tsbuildinfo
