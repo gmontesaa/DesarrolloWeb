@@ -14,7 +14,7 @@ export class BooksController {
     return this.booksService.findOne(Number(id));
   }
   @Post()
-  create(@Body() createBookDto: CreateBookDto) : Promise<Book> {
+  create(@Body() createBookDto: CreateBookDto): Promise<Book> {
     return this.booksService.create(createBookDto);
   }
 }
