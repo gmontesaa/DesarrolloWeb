@@ -1,17 +1,22 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+
 import BookReviews from '@/components/BookReviews.vue';
 import { BookService } from '@/services/BookService.js';
 import { formatToCOP } from '@/utils/currency.js';
-import { useRoute } from 'vue-router';
 import type { BookInterface } from '@/interfaces/BookInterface.js';
-import { onMounted, ref } from 'vue';
+
 const book = ref<BookInterface | null>(null);
+
 onMounted(async () => {
   const route = useRoute();
   const bookId = Number(route.params.id);
+
   book.value = await BookService.getBookById(bookId);
 });
 </script>
+
 <template>
   <section v-if="book">
     <div class="max-w-7xl mx-auto">

@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
+
 import { ReviewService } from '@/services/ReviewService.js';
 import type { ReviewInterface } from '@/interfaces/ReviewInterface.js';
+
 const props = defineProps<{
   bookId: number;
 }>();
+
 const reviews = ref<ReviewInterface[]>([]);
 const form = ref({
   rating: 5,
@@ -12,34 +15,44 @@ const form = ref({
   author: '',
 });
 const isSubmitting = ref(false);
+
 async function submitReview() {
   if (!form.value.comment.trim()) return;
+
   isSubmitting.value = true;
+
   await ReviewService.createReview({
     bookId: props.bookId,
     rating: Math.min(5, Math.max(1, form.value.rating)),
     comment: form.value.comment.trim(),
     author: form.value.author.trim() || undefined,
   });
+
   form.value = { rating: 5, comment: '', author: '' };
   isSubmitting.value = false;
+
   getReviews();
 }
+
 function formatDate(iso?: string): string {
   if (!iso) return '';
+
   return new Date(iso).toLocaleDateString('es-CO', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
   });
 }
+
 async function getReviews() {
   reviews.value = await ReviewService.getReviewsByBookId(props.bookId);
 }
+
 onMounted(() => {
   getReviews();
 });
 </script>
+
 <template>
   <div class="space-y-6">
     <h3 class="text-lg font-semibold text-gray-800">Reviews</h3>

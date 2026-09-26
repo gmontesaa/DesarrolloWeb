@@ -36,26 +36,44 @@
           <form class="space-y-4">
             <div>
               <label class="block text-sm font-medium text-gray-600 mb-1">Nombre</label>
-              <input type="text" name="name" placeholder="Tu nombre"
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+              <input
+                type="text"
+                name="name"
+                placeholder="Tu nombre"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-600 mb-1">Correo electrónico</label>
-              <input type="email" name="email" placeholder="tucorreo@ejemplo.com"
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+              <input
+                type="email"
+                name="email"
+                placeholder="tucorreo@ejemplo.com"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-600 mb-1">Asunto</label>
-              <input type="text" name="subject" placeholder="¿En qué podemos ayudarte?"
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+              <input
+                type="text"
+                name="subject"
+                placeholder="¿En qué podemos ayudarte?"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-600 mb-1">Mensaje</label>
-              <textarea name="message" rows="4" placeholder="Escribe tu mensaje aquí..."
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Escribe tu mensaje aquí..."
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              ></textarea>
             </div>
-            <button type="submit"
-              class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-200">
+            <button
+              type="submit"
+              class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-200"
+            >
               Enviar mensaje
             </button>
           </form>

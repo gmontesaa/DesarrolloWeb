@@ -1,11 +1,17 @@
 .claude/
 node_modules/
+*.log
+*.sqlite
+*.tsbuildinfo
+
+# compiled output (fullstack / scratch builds)
 dist/
 **/src/public/
 **/src/**/*.js
 **/src/**/*.js.map
 **/src/**/*.d.ts
 **/src/**/*.d.ts.map
-*.log
-*.sqlite
-*.tsbuildinfo
+
+# deployment: backend and frontend "dist" folders are versioned
+!courseproject/backend/dist/
+!courseproject/frontend/dist/
