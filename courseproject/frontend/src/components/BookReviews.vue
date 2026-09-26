@@ -14,6 +14,7 @@ const form = ref({
   comment: '',
   author: '',
 });
+
 const isSubmitting = ref(false);
 
 async function submitReview() {
